@@ -1,0 +1,120 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+/* ========================================
+   CUSTOM DESIGN GUIDE UTILITIES
+   ======================================== */
+
+@utility text-primary-brand {
+  color: #10B0F0;
+}
+
+@utility text-secondary-brand {
+  color: #BE84F5;
+}
+
+@utility text-accent-pink {
+  color: #F45C98;
+}
+
+@utility text-accent-orange {
+  color: #F6B85F;
+}
+
+@utility text-accent-red {
+  color: #FF6A7C;
+}
+
+@utility text-muted-1 {
+  color: #7D8793;
+}
+
+@utility text-muted-2 {
+  color: #A8B2BC;
+}
+
+@utility text-disabled {
+  color: #C1C9D1;
+}
+
+/* ── Brand background utilities ── */
+
+@utility bg-primary-brand {
+  background-color: #10B0F0;
+}
+
+@utility bg-primary-soft {
+  background-color: #EAF7FC;
+}
+
+@utility bg-primary-muted {
+  background-color: #AEE7FB;
+}
+
+@utility bg-secondary-brand {
+  background-color: #BE84F5;
+}
+
+@utility bg-secondary-soft {
+  background-color: #F3EAFE;
+}
+
+@utility bg-hero {
+  background-color: #DDF1F8;
+}
+
+@utility bg-hero-light {
+  background-color: #EAF7FC;
+}
+
+@utility bg-surface-blue {
+  background-color: #EFF8FD;
+}
+
+@utility bg-surface-lavender {
+  background-color: #ECE8FB;
+}
+
+@utility bg-surface-beige {
+  background-color: #F8F3E8;
+}
+
+@utility bg-surface-mint {
+  background-color: #E9F6EF;
+}
+
+/* ── Border utilities ── */
+
+@utility border-brand {
+  border-color: #E8EDF2;
+}
+
+@utility border-purple {
+  border-color: #BB78F5;
+}
+
+@utility border-purple-light {
+  border-color: #D9B8FA;
+}
+
+/* ── Shadow utilities ── */
+
+@utility shadow-soft {
+  box-shadow: 0 2px 8px rgba(34, 39, 46, 0.05);
+}
+
+@utility shadow-card {
+  box-shadow: 0 4px 16px rgba(31, 58, 87, 0.06);
+}
+
+@utility shadow-fab {
+  box-shadow: 0 8px 18px rgba(16, 176, 240, 0.28);
+}
+
+/* ── Radius pill shorthand ── */
+
+@utility rounded-pill {
+  border-radius: 999px;
+}

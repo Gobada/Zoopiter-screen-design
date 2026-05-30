@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+dist/
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/

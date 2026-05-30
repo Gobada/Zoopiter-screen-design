@@ -1,0 +1,503 @@
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+
+:root {
+  /* ── Primary brand ── */
+  --primary: #10B0F0;
+  --primary-hover: #08B0F0;
+  --primary-light: #43C3F4;
+  --primary-muted: #AEE7FB;
+  --primary-soft: #EAF7FC;
+
+  /* ── Secondary / action (lavender) ── */
+  --purple: #BE84F5;
+  --purple-hover: #B46DF3;
+  --purple-light: #D9B8FA;
+  --purple-soft: #F3EAFE;
+  --purple-outline: #BB78F5;
+
+  /* ── Accent ── */
+  --pink: #F45C98;
+  --orange: #F6B85F;
+  --red: #FF6A7C;
+  --green: #58B947;
+
+  /* ── Text ── */
+  --text-1: #22272E;
+  --text-2: #7D8793;
+  --text-3: #A8B2BC;
+  --text-disabled: #C1C9D1;
+  --text-white: #FFFFFF;
+
+  /* ── Backgrounds ── */
+  --bg-app: #F7F9FB;
+  --bg-section: #F7F7FB;
+  --bg-hero: #DDF1F8;
+  --bg-hero-light: #EAF7FC;
+
+  /* ── Surfaces ── */
+  --surface: #FFFFFF;
+  --surface-blue: #EFF8FD;
+  --surface-lavender: #ECE8FB;
+  --surface-beige: #F8F3E8;
+  --surface-mint: #E9F6EF;
+
+  /* ── Borders & dividers ── */
+  --border: #E8EDF2;
+  --divider: #EDF1F4;
+
+  /* ── Border radius ── */
+  --r-sm: 10px;
+  --r-12: 12px;
+  --r-16: 16px;
+  --r-20: 20px;
+  --r-pill: 999px;
+
+  /* ── Spacing (8px grid) ── */
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+
+  /* ── Layout ── */
+  --topbar-height: 56px;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 2px 8px rgba(34, 39, 46, 0.05);
+  --shadow-card: 0 4px 16px rgba(31, 58, 87, 0.06);
+  --shadow-fab: 0 8px 18px rgba(16, 176, 240, 0.28);
+
+  /* ── Typography ── */
+  --font-family: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+
+  --fs-hero: 20px;
+  --fs-section: 16px;
+  --fs-card-title: 15px;
+  --fs-body: 14px;
+  --fs-meta: 12px;
+  --fs-caption: 11px;
+  --fs-button: 14px;
+  --fs-tab: 15px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.35;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+}
+
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  background: var(--bg-app);
+  color: var(--text-1);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--surface);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   TYPOGRAPHY UTILITIES
+   ======================================== */
+
+.text-hero {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+.text-section {
+  font-size: var(--fs-section);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+.text-card-title {
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+.text-body {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+}
+
+.text-meta {
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-2);
+}
+
+.text-caption {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  color: var(--text-3);
+}
+
+.text-muted {
+  color: var(--text-2);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}
+
+
+/* ========================================
+   SURFACES & CARDS
+   ======================================== */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-12);
+  box-shadow: var(--shadow-soft);
+  padding: var(--sp-16);
+}
+
+.card-flat {
+  background: var(--surface);
+  border-radius: var(--r-16);
+  padding: var(--sp-16);
+}
+
+.card-tint-blue {
+  background: var(--surface-blue);
+  border-radius: var(--r-16);
+  padding: var(--sp-16);
+}
+
+.card-tint-lavender {
+  background: var(--surface-lavender);
+  border-radius: var(--r-16);
+  padding: var(--sp-16);
+}
+
+.card-tint-beige {
+  background: var(--surface-beige);
+  border-radius: var(--r-16);
+  padding: var(--sp-16);
+}
+
+.card-tint-mint {
+  background: var(--surface-mint);
+  border-radius: var(--r-16);
+  padding: var(--sp-16);
+}
+
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+  background: var(--bg-hero);
+}
+
+.hero-light {
+  background: var(--bg-hero-light);
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+/* Primary filled button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 var(--sp-20);
+  border: 0;
+  border-radius: var(--r-16);
+  background: var(--primary);
+  color: var(--text-white);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Fixed bottom CTA button */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--r-16);
+  background: var(--primary);
+  color: var(--text-white);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  box-shadow: var(--shadow-fab);
+  transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* Outline pill button (lavender) */
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 var(--sp-20);
+  border-radius: var(--r-pill);
+  border: 2px solid var(--purple-light);
+  background: var(--surface);
+  color: var(--purple);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-outline:hover {
+  background: var(--purple-soft);
+  border-color: var(--purple);
+}
+
+.btn-pill-outline:active {
+  transform: scale(0.97);
+}
+
+/* Filled pill button (lavender) */
+.btn-pill-filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 var(--sp-20);
+  border-radius: var(--r-pill);
+  border: 0;
+  background: var(--purple);
+  color: var(--text-white);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-filled:hover {
+  background: var(--purple-hover);
+  transform: translateY(-1px);
+}
+
+.btn-pill-filled:active {
+  transform: translateY(0);
+}
+
+/* FAB (floating action button) */
+.btn-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-white);
+  box-shadow: var(--shadow-fab);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-fab:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(16, 176, 240, 0.32);
+}
+
+.btn-fab:active {
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   TABS
+   ======================================== */
+
+.tab-active {
+  color: var(--primary);
+  font-weight: var(--fw-bold);
+}
+
+.tab-inactive {
+  color: var(--text-1);
+  font-weight: var(--fw-medium);
+}
+
+
+/* ========================================
+   FORM INPUTS
+   ======================================== */
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--sp-16);
+  border: 1px solid var(--border);
+  border-radius: var(--r-12);
+  background: var(--surface);
+  font-size: var(--fs-body);
+  font-family: var(--font-family);
+  color: var(--text-1);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--text-3);
+}
+
+.input:focus {
+  border-color: var(--primary);
+}
+
+
+/* ========================================
+   TAGS & CHIPS
+   ======================================== */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--sp-12);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-medium);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.chip-purple {
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.chip-pink {
+  background: #FDE8F0;
+  color: var(--pink);
+}
+
+
+/* ========================================
+   DIVIDERS
+   ======================================== */
+
+.divider {
+  height: 1px;
+  background: var(--divider);
+  border: none;
+  margin: 0;
+}
+
+
+/* ========================================
+   SCROLLBAR
+   — 완전 제거 (공간 차지 없음)
+   ======================================== */
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Chrome / Safari / Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   SAFE AREA & MOBILE
+   ======================================== */
+
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes petCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

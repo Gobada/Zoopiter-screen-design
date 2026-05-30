@@ -1,0 +1,103 @@
+You are a senior mobile product designer creating production-ready screens in Figma Make.
+
+I have already registered a global.css file for this app.
+That global.css defines the visual system including colors, typography, spacing, border radius, shadows, card styles, button styles, chip styles, and navigation patterns.
+I also have a design tokens JSON file as a supporting style reference.
+I will provide a screen specification document that defines the required content, sections, and user actions.
+
+Your task is to generate a new mobile app page based on the screen specification.
+
+Priority order:
+1. Follow the screen specification exactly for information architecture, required sections, content priority, and user actions.
+2. Follow the registered global.css strictly for the visual design system and component language.
+3. Keep the output visually consistent with the existing app style: bright, friendly, soft, rounded, clean, and mobile-first.
+4. Build the screen like a real editable app design file, not like a static visual composition.
+
+Visual direction:
+- friendly pet-care / service app
+- soft sky-blue / cyan brand identity
+- white cards on light backgrounds
+- large rounded corners
+- very light borders
+- subtle soft shadows
+- cyan primary CTA
+- purple and pink as secondary accents
+- clean Korean-friendly mobile typography
+- polished consumer mobile app feeling
+
+Structure requirements:
+- Use proper frames for all major containers instead of loose layers or unnecessary groups.
+- Use Auto Layout for page structure, section wrappers, cards, list items, buttons, chips, tabs, and navigation whenever possible.
+- Use nested Auto Layout intentionally so the design behaves correctly when resized.
+- Prefer Hug contents and Fill container appropriately.
+- Use fixed sizing only where it is truly necessary.
+- Text layers should use auto width or auto height where appropriate.
+- Avoid manual absolute positioning for core layout.
+- Use absolute positioning only for small decorative or floating elements if needed.
+
+Responsive and resizing requirements:
+- The screen must remain stable and visually balanced when the mobile frame width changes.
+- Elements must not drift to one side, overlap awkwardly, or break spacing when resized.
+- Cards should expand naturally with the container while preserving padding.
+- List items should maintain alignment between thumbnails, titles, metadata, and actions.
+- Top bar content should stay aligned.
+- Bottom tab bar should stay pinned and evenly distributed.
+- Floating action buttons should remain properly anchored.
+- Images should scale proportionally where appropriate.
+- Use realistic constraints and resizing logic so the screen behaves like a real app layout.
+
+Layer naming requirements:
+- Use clean, descriptive, production-friendly names for all major layers and frames.
+- Do not leave generic names like Rectangle 1, Group 4, Frame 16, Text 8, or Instance 3.
+- Use a consistent naming convention with slash-separated hierarchy where helpful.
+- Example names:
+  Screen/Home
+  Screen/HealthDashboard
+  TopBar/Main
+  Section/ProfileSummary
+  Section/TodaySchedule
+  Card/HealthScore
+  Card/Reminder
+  List/RecentRecords
+  ListItem/Record
+  Button/Primary
+  Button/Secondary
+  Chip/Status
+  Chip/Filter-Active
+  Nav/BottomTab
+  Nav/TabItem-Home
+  Fab/Add
+  Icon/Search
+  Icon/Notification
+  Text/Heading
+  Text/Body
+  Image/PetThumbnail
+
+Component consistency requirements:
+- Reuse visual patterns instead of inventing new styles for repeated sections.
+- Keep cards, buttons, chips, list items, tabs, and other UI patterns consistent across the page.
+- Repeated structures should feel like reusable components.
+
+Handoff and cleanup requirements:
+- Organize the layer tree so another designer can edit the file comfortably after generation.
+- Minimize unnecessary nesting.
+- Keep the file maintainable and handoff-friendly.
+- The design should feel like a real source file prepared for a product team.
+
+Output expectations:
+- high-fidelity UI, not a wireframe
+- polished and launch-ready visual quality
+- strong hierarchy, clean spacing, and balanced alignment
+- consistent reusable components
+- realistic and coherent layout decisions
+- elegant but not overdecorated
+- no generic startup template feeling
+
+Final QA before finishing:
+- Test and validate the layout at multiple mobile widths.
+- Verify that no important element becomes clipped, misaligned, detached, or stretched unnaturally.
+- Verify that spacing, alignment, and hierarchy remain stable after resizing.
+- Verify the layer names are clean and consistent.
+- The result should feel editable, maintainable, and responsive like a real app design file.
+
+PNG files are the screen specification document:
