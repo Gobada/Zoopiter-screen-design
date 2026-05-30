@@ -185,7 +185,7 @@ export default function Home() {
     if (pets.length <= 1) return;
     petTimerRef.current = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % pets.length);
-    }, 3000);
+    }, 5000);
     return () => { if (petTimerRef.current) clearInterval(petTimerRef.current); };
   }, [pets.length]);
 

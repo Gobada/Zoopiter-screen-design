@@ -4,7 +4,8 @@
       "Bash(npx tsc *)",
       "Bash(/opt/homebrew/bin/node --version)",
       "Read(//usr/local/bin/**)",
-      "Read(//Users/hyunyoungjin/.local/bin/**)"
+      "Read(//Users/hyunyoungjin/.local/bin/**)",
+      "Bash(git *)"
     ]
   }
 }
