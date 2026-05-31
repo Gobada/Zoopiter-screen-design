@@ -187,8 +187,8 @@ export function PetProfileCard({
           >
             <span
               style={{
-                fontSize: "12px",
-                fontWeight: 500,
+                fontSize: "13px",
+                fontWeight: 700,
                 color: "var(--bubble-text)",
                 lineHeight: 1.35,
                 wordBreak: "keep-all",
@@ -200,7 +200,7 @@ export function PetProfileCard({
                 style={{
                   display: "inline-block",
                   width: "1.5px",
-                  height: "11px",
+                  height: "12px",
                   background: "var(--bubble-cursor)",
                   verticalAlign: "middle",
                   marginLeft: "1px",
