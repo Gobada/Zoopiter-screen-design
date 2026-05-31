@@ -116,7 +116,7 @@ export function PetProfileCard({
             inset: 0,
             display: "flex",
             alignItems: "center",
-            paddingLeft: `${DOG_W + 24}px`,
+            paddingLeft: `${DOG_W + 14}px`,
             paddingRight: "16px",
             borderRadius: "var(--r-12)",
           }}
