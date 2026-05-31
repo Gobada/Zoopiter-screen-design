@@ -65,6 +65,13 @@
   --sidebar-accent-foreground: #22272E;
   --sidebar-border: #EDF1F4;
   --sidebar-ring: #AEE7FB;
+
+  /* ── Pet speech bubble ── */
+  --bubble-bg: #FFFFFF;
+  --bubble-radius: 14px;
+  --bubble-text: #5A6472;
+  --bubble-cursor: #9AA3AF;
+  --bubble-drop-shadow: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.10));
 }
 
 .dark {
@@ -102,6 +109,12 @@
   --sidebar-accent-foreground: #E8EDF2;
   --sidebar-border: #333840;
   --sidebar-ring: #1E6E8A;
+
+  /* ── Pet speech bubble ── */
+  --bubble-bg: #2A2F37;
+  --bubble-text: #C7CDD6;
+  --bubble-cursor: #8A93A0;
+  --bubble-drop-shadow: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.38));
 }
 
 @theme inline {
