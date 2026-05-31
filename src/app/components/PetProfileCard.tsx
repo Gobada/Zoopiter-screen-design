@@ -163,26 +163,23 @@ export function PetProfileCard({
         )}
       </div>
 
-      {/* 말풍선 (생각풍선) */}
+      {/* 말풍선 (꼬리 없음, 한 줄 고정) */}
       {showSpeech && speechText && (
         <div
           style={{
             position: "absolute",
-            top: "6px",
+            top: "2px",
             left: `${DOG_W - 6}px`,
             zIndex: 20,
             pointerEvents: "none",
             filter: "var(--bubble-drop-shadow)",
           }}
         >
-          {/* 본체 */}
           <div
             style={{
-              position: "relative",
               background: "var(--bubble-bg)",
               borderRadius: "var(--bubble-radius)",
               padding: "7px 13px",
-              maxWidth: "150px",
             }}
           >
             <span
@@ -191,7 +188,7 @@ export function PetProfileCard({
                 fontWeight: 700,
                 color: "var(--bubble-text)",
                 lineHeight: 1.35,
-                wordBreak: "keep-all",
+                whiteSpace: "nowrap",
                 display: "block",
               }}
             >
@@ -209,31 +206,6 @@ export function PetProfileCard({
               />
             </span>
           </div>
-
-          {/* 점 꼬리 1 (큰 점) — 본체 왼쪽 아래 */}
-          <div
-            style={{
-              position: "absolute",
-              left: "-2px",
-              bottom: "-9px",
-              width: "9px",
-              height: "9px",
-              borderRadius: "9999px",
-              background: "var(--bubble-bg)",
-            }}
-          />
-          {/* 점 꼬리 2 (작은 점) — 더 왼쪽-아래, 강아지 머리 쪽 */}
-          <div
-            style={{
-              position: "absolute",
-              left: "-11px",
-              bottom: "-20px",
-              width: "6px",
-              height: "6px",
-              borderRadius: "9999px",
-              background: "var(--bubble-bg)",
-            }}
-          />
         </div>
       )}
 
