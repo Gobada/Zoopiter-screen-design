@@ -163,50 +163,35 @@ export function PetProfileCard({
         )}
       </div>
 
-      {/* 말풍선 */}
+      {/* 말풍선 (생각풍선) */}
       {showSpeech && speechText && (
         <div
           style={{
             position: "absolute",
-            top: "4px",
-            left: `${DOG_W - 8}px`,
+            top: "6px",
+            left: `${DOG_W - 6}px`,
             zIndex: 20,
             pointerEvents: "none",
             filter: "var(--bubble-drop-shadow)",
           }}
         >
-          {/* 본체 — 테두리 없음, 그림자는 부모가 담당 */}
+          {/* 본체 */}
           <div
             style={{
               position: "relative",
               background: "var(--bubble-bg)",
               borderRadius: "var(--bubble-radius)",
               padding: "7px 13px",
-              maxWidth: "160px",
-              minWidth: "70px",
+              maxWidth: "150px",
             }}
           >
-            {/* 꼬리 — 본체와 같은 흰색이라 부모 drop-shadow가 둘을 하나로 처리 */}
-            <div
-              style={{
-                position: "absolute",
-                left: "-4px",
-                bottom: "7px",
-                width: "13px",
-                height: "13px",
-                background: "var(--bubble-bg)",
-                borderRadius: "2px 0 3px 0",
-                transform: "rotate(45deg)",
-              }}
-            />
             <span
               style={{
-                position: "relative",
                 fontSize: "12px",
                 fontWeight: 500,
                 color: "var(--bubble-text)",
-                lineHeight: 1.4,
-                whiteSpace: "nowrap",
+                lineHeight: 1.35,
+                wordBreak: "keep-all",
                 display: "block",
               }}
             >
@@ -224,6 +209,31 @@ export function PetProfileCard({
               />
             </span>
           </div>
+
+          {/* 점 꼬리 1 (큰 점) — 본체 왼쪽 아래 */}
+          <div
+            style={{
+              position: "absolute",
+              left: "-2px",
+              bottom: "-9px",
+              width: "9px",
+              height: "9px",
+              borderRadius: "9999px",
+              background: "var(--bubble-bg)",
+            }}
+          />
+          {/* 점 꼬리 2 (작은 점) — 더 왼쪽-아래, 강아지 머리 쪽 */}
+          <div
+            style={{
+              position: "absolute",
+              left: "-11px",
+              bottom: "-20px",
+              width: "6px",
+              height: "6px",
+              borderRadius: "9999px",
+              background: "var(--bubble-bg)",
+            }}
+          />
         </div>
       )}
 
