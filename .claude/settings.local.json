@@ -5,7 +5,11 @@
       "Bash(/opt/homebrew/bin/node --version)",
       "Read(//usr/local/bin/**)",
       "Read(//Users/hyunyoungjin/.local/bin/**)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(npm run *)",
+      "Bash(npx vite *)",
+      "Bash(git rm *)",
+      "Bash(git add *)"
     ]
   }
 }
