@@ -73,6 +73,7 @@ interface PetProfileCardProps {
   onClick?: () => void;
   children: React.ReactNode;
   overlays?: React.ReactNode;
+  showSpeech?: boolean;
 }
 
 export function PetProfileCard({
@@ -83,6 +84,7 @@ export function PetProfileCard({
   onClick,
   children,
   overlays,
+  showSpeech = true,
 }: PetProfileCardProps) {
   const speechText = usePetSpeech(status);
 
@@ -162,53 +164,50 @@ export function PetProfileCard({
       </div>
 
       {/* 말풍선 */}
-      {speechText && (
+      {showSpeech && speechText && (
         <div
           style={{
             position: "absolute",
-            top: "-14px",
-            left: `${DOG_W + 4}px`,
+            top: "4px",
+            left: `${DOG_W - 8}px`,
             zIndex: 20,
             pointerEvents: "none",
-            filter: "drop-shadow(0 1px 4px rgba(0,0,0,0.04))",
+            filter: "var(--bubble-drop-shadow)",
           }}
         >
-          {/* 말풍선 본체 — 꼬리를 내부 자식으로 포함해 이음새 완전 제거 */}
+          {/* 본체 — 테두리 없음, 그림자는 부모가 담당 */}
           <div
             style={{
               position: "relative",
-              background: "white",
-              border: "1px solid #E8EDF2",
-              borderRadius: "12px",
-              padding: "6px 12px 6px 14px",
+              background: "var(--bubble-bg)",
+              borderRadius: "var(--bubble-radius)",
+              padding: "7px 13px",
               maxWidth: "160px",
-              minWidth: "80px",
-              display: "flex",
-              alignItems: "center",
+              minWidth: "70px",
             }}
           >
-            {/* 꼬리 — 본체 내부에서 왼쪽 하단으로 돌출, 본체의 흰 배경이 이음새를 덮음 */}
+            {/* 꼬리 — 본체와 같은 흰색이라 부모 drop-shadow가 둘을 하나로 처리 */}
             <div
               style={{
                 position: "absolute",
-                left: "-7px",
-                bottom: "4px",
-                width: "12px",
-                height: "12px",
-                background: "white",
-                borderLeft: "1px solid #E8EDF2",
-                borderBottom: "1px solid #E8EDF2",
-                transform: "rotate(-45deg)",
+                left: "-4px",
+                bottom: "7px",
+                width: "13px",
+                height: "13px",
+                background: "var(--bubble-bg)",
+                borderRadius: "2px 0 3px 0",
+                transform: "rotate(45deg)",
               }}
             />
             <span
               style={{
+                position: "relative",
                 fontSize: "12px",
                 fontWeight: 500,
-                color: "#7D8793",
+                color: "var(--bubble-text)",
                 lineHeight: 1.4,
-                display: "block",
                 whiteSpace: "nowrap",
+                display: "block",
               }}
             >
               {speechText}
@@ -217,7 +216,7 @@ export function PetProfileCard({
                   display: "inline-block",
                   width: "1.5px",
                   height: "11px",
-                  background: "#7D8793",
+                  background: "var(--bubble-cursor)",
                   verticalAlign: "middle",
                   marginLeft: "1px",
                   animation: "petCursorBlink 0.9s step-end infinite",
