@@ -2,6 +2,7 @@ import { TopBar } from "../components/TopBar";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import {
   Plus,
+  ChevronRight,
   Home as HomeIcon,
   Map,
   MessageSquare,
@@ -258,24 +259,25 @@ export default function Home() {
                 >
                   {currentStatus}
                 </span>
-                {/* 프로필 확인 — PetInfo '주관리자' 배지와 동일 스타일, 우측 정렬 */}
+                {/* 프로필 확인 — PetInfo 카드의 '주관리자' 배지와 동일 스타일. 높이는 '집' pill 과 동일 */}
                 <span
                   style={{
                     marginLeft: "auto",
+                    alignSelf: "stretch",
+                    boxSizing: "border-box",
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    height: "22px",
+                    gap: "4px",
                     padding: "0 10px",
                     borderRadius: "9999px",
-                    background: "#EBF5FF",
-                    color: "var(--primary)",
-                    fontSize: "10px",
-                    fontWeight: 700,
+                    background: "rgba(255,255,255,0.25)",
+                    border: "1px solid rgba(255,255,255,0.5)",
                     flexShrink: 0,
                   }}
                 >
-                  프로필 확인
+                  <span style={{ fontSize: "11px", fontWeight: 600, color: "white" }}>프로필 확인</span>
+                  <ChevronRight style={{ width: "10px", height: "10px", color: "white" }} />
                 </span>
               </div>
             </PetProfileCard>
