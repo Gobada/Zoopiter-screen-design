@@ -8,15 +8,13 @@ export const DOG_W = 140;
 
 // ──────────────────────────────────────────
 // 말풍선 문구 설정
-// 상태별 문구를 여기서 직접 수정하세요
+// 아래 배열의 문구를 직접 수정하세요
 // ──────────────────────────────────────────
-const PET_SPEECH_CONFIG: Record<string, string[]> = {
-  "집":  ["집에 있어요 🏠", "오늘 산책 갈까요? 🐾", "간식 언제 줄래요? 🍖", "심심해요~ 놀아줄래요!"],
-  "외출": ["나 없어요 🐕", "빨리 와요, 기다려요!", "배가 좀 고파요 🌟"],
-  "돌봄": ["돌봄 중이에요 🐾", "잘 지내고 있어요!"],
-  "실종": ["어디 있는지 몰라요 😰", "빨리 찾아주세요..."],
-};
-const PET_SPEECH_DEFAULT = ["안녕하세요! 🐾", "반가워요 🐶"];
+const PET_SPEECH_PHRASES = [
+  "저는 주비라고 해요.",
+  "저를 눌러보세요.",
+  "여러분의 아이를 등록할 수 있어요.",
+];
 
 // 타이핑 속도 설정 (ms) — 여기서 속도를 조절하세요
 const TYPING_SPEED = 110;
@@ -25,8 +23,8 @@ const PAUSE_AFTER_TYPED = 2500;
 const PAUSE_BEFORE_NEXT = 400;
 // ──────────────────────────────────────────
 
-function usePetSpeech(status: string) {
-  const phrases = PET_SPEECH_CONFIG[status] ?? PET_SPEECH_DEFAULT;
+function usePetSpeech(_status: string) {
+  const phrases = PET_SPEECH_PHRASES;
   const [displayText, setDisplayText] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
