@@ -11,7 +11,7 @@ export function TopBar({ type = "home", title }: TopBarProps) {
 
   if (type === "home") {
     return (
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 bg-white border-b border-[var(--border)]"
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 bg-[var(--bg-app)]"
         style={{ height: "var(--topbar-height)" }}>
         <div className="text-[20px] font-bold" style={{ color: "var(--primary)" }}>
           Zoopiter
