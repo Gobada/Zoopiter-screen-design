@@ -35,6 +35,8 @@ import { PetProfileCard, OVERFLOW } from "../components/PetProfileCard";
 import type { ReportData } from "./lostPetUtils";
 import { getTop3Tasks, toggleTask as storeToggleTask, CATEGORY_INFO } from "./petCareStore";
 
+const PET_INFO_SPEECH = ["여기에서 저를 관리할 수 있어요.", "저를 잘 보살펴 주세요."];
+
 // 카테고리 아이콘 매핑 (단색 라인 아이콘)
 const TASK_CATEGORY_ICON: Record<string, React.ComponentType<{ size?: number; color?: string; strokeWidth?: number; style?: React.CSSProperties }>> = {
   ListChecks, UtensilsCrossed, Pill, Footprints, Gamepad2,
@@ -66,7 +68,7 @@ export const globalPetsData: Record<
   }
 > = {
   buddy: {
-    name: "버디",
+    name: "주피",
     age: "3살",
     breed: "말티즈",
     species: "강아지",
@@ -84,7 +86,7 @@ export const globalPetsData: Record<
     ],
   },
   bappe: {
-    name: "베페",
+    name: "주비",
     age: "2살",
     breed: "포메라니안",
     species: "강아지",
@@ -109,8 +111,8 @@ export const globalPetStatus: Record<string, string> = {
 };
 
 export const globalPets: { id: string; name: string }[] = [
-  { id: "buddy", name: "버디" },
-  { id: "bappe", name: "베페" },
+  { id: "buddy", name: "주피" },
+  { id: "bappe", name: "주비" },
 ];
 
 const DUMMY_COLORS = [
@@ -682,7 +684,7 @@ export default function PetInfo() {
       <TopBar type="back" title="나의 펫 정보" />
 
       {/* Tabs */}
-      <div className="fixed top-14 left-0 right-0 bg-white border-b border-[var(--border)] px-4 z-30">
+      <div className="fixed top-14 left-0 right-0 bg-[var(--bg-app)] border-b border-[var(--border)] px-4 z-30">
         <div className="flex items-center gap-2">
           {pets.map((pet) => (
             <button
@@ -733,6 +735,7 @@ export default function PetInfo() {
             status={currentStatus}
             imageUrl={currentPetState.removedImageUrl}
             isProcessing={isProcessing}
+            speechPhrases={PET_INFO_SPEECH}
             overlays={
               <>
                 {/* 색상 선택 버튼 */}
@@ -958,12 +961,21 @@ export default function PetInfo() {
 
         {/* Basic Info */}
         <div className="card p-4">
-          <h3
-            className="text-[16px] font-bold mb-4"
-            style={{ color: "var(--text-1)" }}
-          >
-            기본 정보
-          </h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3
+              className="text-[16px] font-bold"
+              style={{ color: "var(--text-1)" }}
+            >
+              기본 정보
+            </h3>
+            <button
+              onClick={() => navigate(`/pet/${activeTab}/edit`)}
+              className="text-[13px] flex items-center gap-1"
+              style={{ color: "var(--text-2)" }}
+            >
+              수정하기 <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
           <div
             style={{
               display: "flex",
@@ -1222,12 +1234,6 @@ export default function PetInfo() {
               </div>
             </button>
           </div>
-          <button
-            onClick={() => navigate(`/pet/${activeTab}/edit`)}
-            className="btn-primary w-full"
-          >
-            수정하기
-          </button>
         </div>
       </div>
 
