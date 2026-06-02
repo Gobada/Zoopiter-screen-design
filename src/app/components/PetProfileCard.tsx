@@ -23,8 +23,8 @@ const PAUSE_AFTER_TYPED = 2500;
 const PAUSE_BEFORE_NEXT = 400;
 // ──────────────────────────────────────────
 
-function usePetSpeech(_status: string) {
-  const phrases = PET_SPEECH_PHRASES;
+function usePetSpeech(_status: string, overridePhrases?: string[]) {
+  const phrases = overridePhrases ?? PET_SPEECH_PHRASES;
   const [displayText, setDisplayText] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -58,7 +58,7 @@ function usePetSpeech(_status: string) {
     setDisplayText("");
     setIsDeleting(false);
     setPhraseIdx(0);
-  }, [status]);
+  }, [phrases]);
 
   return displayText;
 }
@@ -72,6 +72,7 @@ interface PetProfileCardProps {
   children: React.ReactNode;
   overlays?: React.ReactNode;
   showSpeech?: boolean;
+  speechPhrases?: string[];
 }
 
 export function PetProfileCard({
@@ -83,8 +84,9 @@ export function PetProfileCard({
   children,
   overlays,
   showSpeech = true,
+  speechPhrases,
 }: PetProfileCardProps) {
-  const speechText = usePetSpeech(status);
+  const speechText = usePetSpeech(status, speechPhrases);
 
   return (
     <div
