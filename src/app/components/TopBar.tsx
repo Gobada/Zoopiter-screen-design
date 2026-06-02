@@ -29,7 +29,7 @@ export function TopBar({ type = "home", title }: TopBarProps) {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex items-center px-4 bg-white border-b border-[var(--border)]"
+    <div className="fixed top-0 left-0 right-0 z-50 flex items-center px-4 bg-[var(--bg-app)]"
       style={{ height: "var(--topbar-height)" }}>
       <button onClick={() => navigate(-1)} className="p-2 -ml-2">
         <ChevronLeft className="w-6 h-6" style={{ color: "var(--text-1)" }} />

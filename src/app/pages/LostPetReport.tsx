@@ -97,7 +97,7 @@ export default function LostPetReport() {
   return (
     <div className="min-h-screen bg-[var(--bg-app)] flex flex-col">
       {/* TopBar */}
-      <div className="relative flex items-center px-4 py-3 bg-white border-b border-[var(--border)]">
+      <div className="relative flex items-center px-4 py-3 bg-[var(--bg-app)]">
         <button onClick={() => navigate(`/pet/${petId}`, { replace: true })} className="p-1 rounded-full hover:bg-[var(--bg-app)] transition-colors">
           <ChevronLeft size={22} style={{ color: "var(--text-1)" }} />
         </button>

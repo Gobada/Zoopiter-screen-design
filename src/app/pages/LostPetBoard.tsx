@@ -499,7 +499,7 @@ export default function LostPetBoard() {
   return (
     <div className="min-h-screen bg-[var(--bg-app)] flex flex-col">
       {/* ── TopBar ── */}
-      <header className="flex items-center justify-between px-4 py-3 bg-white border-b border-[var(--border)] sticky top-0 z-50">
+      <header className="flex items-center justify-between px-4 py-3 bg-[var(--bg-app)] sticky top-0 z-50">
         <button
           onClick={() => navigate(-1)}
           className="p-1 rounded-full hover:bg-[var(--bg-app)] transition-colors"
