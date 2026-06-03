@@ -735,7 +735,7 @@ export default function PetInfo() {
             status={currentStatus}
             imageUrl={currentPetState.removedImageUrl}
             isProcessing={isProcessing}
-            petName={currentPet.name}
+            petId={activeTab}
             speechPhrases={PET_INFO_SPEECH}
             overlays={
               <>
@@ -820,8 +820,8 @@ export default function PetInfo() {
                   disabled={isProcessing}
                   style={{
                     position: "absolute",
-                    bottom: "5px",
-                    left: "100px",
+                    bottom: "8px",
+                    left: "8px",
                     width: "28px",
                     height: "28px",
                     borderRadius: "9999px",

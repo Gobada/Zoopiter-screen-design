@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Loader } from "lucide-react";
-import { Zoopi } from "./Zoopi";
-import { Zoovi } from "./Zoovi";
+import { PET_CHARACTER_COMPONENTS, resolvePetCharacter } from "./petCharacters";
 
 export const CARD_H = 95;
 export const OVERFLOW = 25;
@@ -74,7 +73,7 @@ interface PetProfileCardProps {
   overlays?: React.ReactNode;
   showSpeech?: boolean;
   speechPhrases?: string[];
-  petName?: string;
+  petId?: string;
 }
 
 export function PetProfileCard({
@@ -87,9 +86,10 @@ export function PetProfileCard({
   overlays,
   showSpeech = true,
   speechPhrases,
-  petName,
+  petId,
 }: PetProfileCardProps) {
   const speechText = usePetSpeech(status, speechPhrases);
+  const Character = PET_CHARACTER_COMPONENTS[resolvePetCharacter(petId)];
 
   return (
     <div
@@ -159,12 +159,8 @@ export function PetProfileCard({
               transition: "all 0.3s ease",
             }}
           />
-        ) : petName === "주비" ? (
-          <Zoovi
-            style={{ width: "100%", height: "100%", transformOrigin: "bottom", transition: "all 0.3s ease" }}
-          />
         ) : (
-          <Zoopi
+          <Character
             style={{ width: "100%", height: "100%", transformOrigin: "bottom", transition: "all 0.3s ease" }}
           />
         )}

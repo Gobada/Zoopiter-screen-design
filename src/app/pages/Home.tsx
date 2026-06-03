@@ -225,7 +225,7 @@ export default function Home() {
               cardColor={currentPetState.cardColor}
               status={currentStatus}
               imageUrl={currentImageUrl}
-              petName={currentPet.name}
+              petId={currentPet.id}
               onClick={() => navigate(`/pet/${currentPet.id}`)}
             >
               <h2
