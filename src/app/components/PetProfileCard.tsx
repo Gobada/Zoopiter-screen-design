@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Loader } from "lucide-react";
-import { DefaultPetSVG } from "./DefaultPetSVG";
+import { Zoopi } from "./Zoopi";
+import { Zoovi } from "./Zoovi";
 
 export const CARD_H = 95;
 export const OVERFLOW = 25;
@@ -11,7 +12,7 @@ export const DOG_W = 140;
 // 아래 배열의 문구를 직접 수정하세요
 // ──────────────────────────────────────────
 const PET_SPEECH_PHRASES = [
-  "저는 주비라고 해요!",
+  "저는 주피라고 해요!",
   "여기를 눌러보세요!",
   "여러분의 아이를 등록해보세요.",
 ];
@@ -73,6 +74,7 @@ interface PetProfileCardProps {
   overlays?: React.ReactNode;
   showSpeech?: boolean;
   speechPhrases?: string[];
+  petName?: string;
 }
 
 export function PetProfileCard({
@@ -85,6 +87,7 @@ export function PetProfileCard({
   overlays,
   showSpeech = true,
   speechPhrases,
+  petName,
 }: PetProfileCardProps) {
   const speechText = usePetSpeech(status, speechPhrases);
 
@@ -156,8 +159,12 @@ export function PetProfileCard({
               transition: "all 0.3s ease",
             }}
           />
+        ) : petName === "주비" ? (
+          <Zoovi
+            style={{ width: "100%", height: "100%", transformOrigin: "bottom", transition: "all 0.3s ease" }}
+          />
         ) : (
-          <DefaultPetSVG
+          <Zoopi
             style={{ width: "100%", height: "100%", transformOrigin: "bottom", transition: "all 0.3s ease" }}
           />
         )}

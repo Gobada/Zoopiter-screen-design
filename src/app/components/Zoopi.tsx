@@ -1,4 +1,4 @@
-export function DefaultPetSVG({ style }: { style?: React.CSSProperties }) {
+export function Zoopi({ style }: { style?: React.CSSProperties }) {
   // Jupiter 그룹 컴포넌트 (center: 49.5, 87)
   const JupiterGroup = () => (
     <g transform="translate(-49.5, -87)">

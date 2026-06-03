@@ -216,7 +216,7 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--bg-app)]" style={{ paddingTop: "56px", paddingBottom: "80px" }}>
       <TopBar type="home" />
 
-      <div className="px-4 space-y-4" style={{ paddingTop: "4px" }}>
+      <div className="px-4 space-y-4" style={{ paddingTop: "2px" }}>
 
         {/* ── 펫 프로필 카드 (단일 렌더링 + CSS transition) ── */}
         {currentPet && (
@@ -225,6 +225,7 @@ export default function Home() {
               cardColor={currentPetState.cardColor}
               status={currentStatus}
               imageUrl={currentImageUrl}
+              petName={currentPet.name}
               onClick={() => navigate(`/pet/${currentPet.id}`)}
             >
               <h2

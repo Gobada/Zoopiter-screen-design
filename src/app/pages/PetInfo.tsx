@@ -35,7 +35,7 @@ import { PetProfileCard, OVERFLOW } from "../components/PetProfileCard";
 import type { ReportData } from "./lostPetUtils";
 import { getTop3Tasks, toggleTask as storeToggleTask, CATEGORY_INFO } from "./petCareStore";
 
-const PET_INFO_SPEECH = ["여기에서 저를 관리할 수 있어요.", "저를 잘 보살펴 주세요."];
+const PET_INFO_SPEECH = ["여기에서 저를 관리할 수 있어요.", "저를 잘 보살펴 주세요!"];
 
 // 카테고리 아이콘 매핑 (단색 라인 아이콘)
 const TASK_CATEGORY_ICON: Record<string, React.ComponentType<{ size?: number; color?: string; strokeWidth?: number; style?: React.CSSProperties }>> = {
@@ -735,6 +735,7 @@ export default function PetInfo() {
             status={currentStatus}
             imageUrl={currentPetState.removedImageUrl}
             isProcessing={isProcessing}
+            petName={currentPet.name}
             speechPhrases={PET_INFO_SPEECH}
             overlays={
               <>
